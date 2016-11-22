@@ -30,6 +30,8 @@ public class BookingSystemController implements Initializable {
     @FXML
     private Button btnLogin;
 
+    static Stage primStage;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -38,7 +40,7 @@ public class BookingSystemController implements Initializable {
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
         //Get primary stage, get loader and load FXML
-        Stage primStage = (Stage) btnLogin.getScene().getWindow();
+        primStage = (Stage) btnLogin.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bookingsystem/gui/view/LoginModal.fxml"));
         Parent root = loader.load();
 
@@ -50,8 +52,19 @@ public class BookingSystemController implements Initializable {
         stageLoginView.setScene(new Scene(root));
         stageLoginView.initModality(Modality.WINDOW_MODAL);
         stageLoginView.initOwner(primStage);
-
         stageLoginView.show();
+    }
+
+    /**
+     * Switch to the EntertainerView
+     *
+     * @throws IOException
+     */
+    public static void switchToEnterTainerView() throws IOException {
+        FXMLLoader loader = new FXMLLoader(BookingSystemController.class.getResource("/bookingsystem/gui/view/EntertainerView.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(loader.getRoot());
+        primStage.setScene(scene);
     }
 
 }

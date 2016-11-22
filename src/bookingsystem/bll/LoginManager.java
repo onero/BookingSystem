@@ -5,7 +5,41 @@
  */
 package bookingsystem.bll;
 
+import bookingsystem.be.Login;
+
 public class LoginManager {
 
-    //Create user login
+    private String currentUser;
+
+    /**
+     * Validate the parsed username and password against the admin constants
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    public boolean validateAdminLogin(String username, String password) {
+        boolean validUser = username.equals(Login.getADMIN_USERNAME())
+                && password.equals(Login.getADMIN_PASSWORD());
+        if (validUser) {
+            currentUser = Login.getADMIN_USERNAME();
+        }
+        return validUser;
+    }
+
+    /**
+     * Validate the parsed username and password against the employee constants
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    public boolean validateWorkerLogin(String username, String password) {
+        boolean validUser = username.equals(Login.getEMPLOYEE_USERNAME())
+                && password.equals(Login.getEMPLOYEE_PASSWORD());
+        if (validUser) {
+            currentUser = Login.getEMPLOYEE_USERNAME();
+        }
+        return validUser;
+    }
 }
