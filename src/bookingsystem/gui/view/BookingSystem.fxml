@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookingsystem.gui.controller.BookingSystemController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+
+<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="605.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="bookingsystem.gui.controller.BookingSystemController">
+   <children>
+      <Pane layoutX="6.0" layoutY="237.0" prefHeight="337.0" prefWidth="594.0">
+         <children>
+            <ListView layoutX="14.0" layoutY="14.0" prefHeight="313.0" prefWidth="270.0" />
+            <Label layoutX="297.0" layoutY="33.0" text="Description" />
+            <TextArea layoutX="291.0" layoutY="71.0" prefHeight="253.0" prefWidth="288.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="14.0" prefHeight="194.0" prefWidth="584.0">
+         <children>
+            <ImageView fx:id="imgEntertainer1" fitHeight="150.0" fitWidth="157.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgEntertainer2" fitHeight="150.0" fitWidth="157.0" layoutX="214.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgEntertainer3" fitHeight="150.0" fitWidth="176.0" layoutX="394.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <TextField layoutX="153.0" layoutY="212.0" promptText="Kim Larsen" />
+      <Label layoutX="99.0" layoutY="216.0" text="Search" />
+      <ComboBox layoutX="325.0" layoutY="212.0" prefWidth="150.0" />
+      <Label layoutX="499.0" layoutY="216.0" prefHeight="17.0" prefWidth="79.0" text="Tel: 70171924" />
+   </children>
 </AnchorPane>
