@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="605.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="bookingsystem.BookingSystemController">
+
+<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="605.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="bookingsystem.gui.controller.BookingSystemController">
    <children>
       <Pane layoutX="6.0" layoutY="237.0" prefHeight="337.0" prefWidth="594.0">
          <children>
