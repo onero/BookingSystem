@@ -19,7 +19,8 @@ public class BookingSystem extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("BookingSystem.fxml"));
+        System.out.println(getClass().getResource("gui/view/BookingSystem.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("gui/view/BookingSystem.fxml"));
 
         Scene scene = new Scene(root);
 
