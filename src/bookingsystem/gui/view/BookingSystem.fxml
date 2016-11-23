@@ -47,9 +47,10 @@
             <Label fx:id="lblThirdArtistName" layoutX="436.0" layoutY="172.0" text="Mads Langer" />
          </children>
       </Pane>
-      <TextField layoutX="153.0" layoutY="212.0" promptText="Kim Larsen" />
+      <TextField fx:id="txtSearch" layoutX="153.0" layoutY="212.0" onKeyPressed="#handleSearch" promptText="Kim Larsen" />
       <Label layoutX="99.0" layoutY="216.0" text="Search" />
       <ComboBox layoutX="325.0" layoutY="212.0" prefWidth="150.0" promptText="Entertainer" />
       <Label layoutX="499.0" layoutY="216.0" prefHeight="17.0" prefWidth="79.0" text="Tel: 70171924" />
+      <Button fx:id="btnClearSearch" layoutX="14.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleReset" text="Clear" />
    </children>
 </AnchorPane>

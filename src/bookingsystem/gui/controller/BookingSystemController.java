@@ -23,9 +23,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -64,6 +67,10 @@ public class BookingSystemController implements Initializable {
     private BookingManager bookingManager;
 
     private Image selectedEntertainerImg;
+    @FXML
+    private TextField txtSearch;
+    @FXML
+    private Button btnClearSearch;
 
     public BookingSystemController() {
         bookingModel = new BookingModel();
@@ -104,6 +111,27 @@ public class BookingSystemController implements Initializable {
         txtDescription.setText(bookingManager.getEntertainerDescription(selectedEntertainer));
         selectedEntertainerImg = new Image(selectedEntertainer.getIMAGE_PATH());
         imgSelectedEntertainer.setImage(selectedEntertainerImg);
+    }
+
+    /**
+     * Clears all search and resets data
+     */
+    @FXML
+    private void handleReset() {
+        bookingModel.resetList();
+        txtSearch.setText("");
+    }
+
+    /**
+     * Begins a search in the observable list for the query parsed
+     */
+    @FXML
+    private void handleSearch(KeyEvent event) {
+        if (event.getCode().equals(KeyCode.ENTER)) {
+            bookingModel.updateEntertainers(
+                    bookingManager.getEntertainersFromSearch(
+                            bookingModel.getEntertainers(), txtSearch.getText().toLowerCase()));
+        }
     }
 
     /**

@@ -7,6 +7,7 @@ package bookingsystem.gui.model;
 
 import bookingsystem.be.Entertainer;
 import bookingsystem.be.EntertainerType;
+import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -16,20 +17,21 @@ public class BookingModel {
 
     public BookingModel() {
         entertainers = FXCollections.observableArrayList();
-        addEntertainers();
+        resetList();
     }
 
     /**
      * Adds entertainers to the observable list
      */
-    private void addEntertainers() {
+    public void resetList() {
         Entertainer kLarsen = new Entertainer(
                 "Kim Larsen", "kLarsen@contact.dk", 12345678, 1000000, EntertainerType.MUSICIAN);
         kLarsen.setDescription("Bacon Ipsum");
         kLarsen.setIMAGE_PATH("/bookingsystem/assets/img/KimLarsen.jpg");
         entertainers.add(kLarsen);
 
-        Entertainer rSeebach = new Entertainer("Rasmus Seebach", "rSeebach@contact.dk", 12345678, 750000, EntertainerType.MUSICIAN);
+        Entertainer rSeebach = new Entertainer(
+                "Rasmus Seebach", "rSeebach@contact.dk", 12345678, 750000, EntertainerType.MUSICIAN);
         rSeebach.setDescription("Awesome singer!");
         rSeebach.setIMAGE_PATH("/bookingsystem/assets/img/RasmusSeebach.jpeg");
         entertainers.add(rSeebach);
@@ -43,6 +45,14 @@ public class BookingModel {
 
     public ObservableList<Entertainer> getEntertainers() {
         return entertainers;
+    }
+
+    /**
+     * Updates the observable list
+     */
+    public void updateEntertainers(ArrayList<Entertainer> newEntertainers) {
+        entertainers.clear();
+        entertainers.addAll(newEntertainers);
     }
 
 }
