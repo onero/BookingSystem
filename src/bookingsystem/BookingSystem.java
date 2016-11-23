@@ -6,17 +6,10 @@
 package bookingsystem;
 
 //import java.net.URL;
-import bookingsystem.gui.controller.BookingSystemController;
-import bookingsystem.gui.controller.TestController;
-import java.io.IOException;
-import java.io.InputStream;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -42,53 +35,5 @@ public class BookingSystem extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-    }
-    
-    public void gotToStart() throws IOException
-    {
-        try
-        {
-            BookingSystemController bookingSystemController = 
-                    (BookingSystemController) replaceSceneContent("gui/view/BookingSystem.fxml");
-        }
-        catch(Exception ex)
-        {
-            System.out.println("Some mistake");
-        }
-    }
-    
-    public void goToTest()
-    {
-        try
-        {
-            TestController testController = 
-                    (TestController) replaceSceneContent("gui/view/TestView.fxml");
-            testController.setApp(this);
-        }
-        catch(Exception ex)
-        {
-            System.out.println("Some mistake");
-        }
-    }
-    
-    private Initializable replaceSceneContent(String fxml) throws IOException
-    {
-        FXMLLoader loader = new FXMLLoader();
-        InputStream in = BookingSystem.class.getResourceAsStream(fxml);
-        loader.setBuilderFactory(new JavaFXBuilderFactory());
-        loader.setLocation(BookingSystem.class.getResource(fxml));
-        AnchorPane page;
-        try
-        {
-            page = (AnchorPane) loader.load(in);
-        }
-        finally
-        {
-            in.close();
-        }
-        Scene scene = new Scene(page);
-        stage.setScene(scene);
-        stage.sizeToScene();
-        return (Initializable) loader.getController();
     }
 }
