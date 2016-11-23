@@ -49,7 +49,7 @@
       </Pane>
       <TextField fx:id="txtSearch" layoutX="153.0" layoutY="212.0" onKeyPressed="#handleSearch" promptText="Kim Larsen" />
       <Label layoutX="99.0" layoutY="216.0" text="Search" />
-      <ComboBox layoutX="325.0" layoutY="212.0" prefWidth="150.0" promptText="Entertainer" />
+      <ComboBox fx:id="comboEntertainers" layoutX="325.0" layoutY="212.0" onAction="#handleComboLimit" prefWidth="150.0" promptText="Entertainer type" />
       <Label layoutX="499.0" layoutY="216.0" prefHeight="17.0" prefWidth="79.0" text="Tel: 70171924" />
       <Button fx:id="btnClearSearch" layoutX="14.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleReset" text="Clear" />
    </children>

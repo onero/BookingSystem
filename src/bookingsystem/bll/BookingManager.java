@@ -11,6 +11,8 @@ import javafx.collections.ObservableList;
 
 public class BookingManager {
 
+    private ArrayList<Entertainer> search;
+
     public String getEntertainerDescription(Entertainer entertainer) {
         return entertainer.getDescription();
     }
@@ -23,10 +25,28 @@ public class BookingManager {
      * @return
      */
     public ArrayList<Entertainer> getEntertainersFromSearch(ObservableList<Entertainer> entertainers, String query) {
-        ArrayList<Entertainer> search = new ArrayList<>();
+        search = new ArrayList<>();
 
         for (Entertainer entertainer : entertainers) {
             if (entertainer.getName().toLowerCase().contains(query)) {
+                search.add(entertainer);
+            }
+        }
+        return search;
+    }
+
+    /**
+     * Gets the entertainers from the combo limitation
+     *
+     * @param entertainers
+     * @param choice
+     * @return
+     */
+    public ArrayList<Entertainer> getEntertainersFromComboLimit(ObservableList<Entertainer> entertainers, String choice) {
+        search = new ArrayList<>();
+
+        for (Entertainer entertainer : entertainers) {
+            if (entertainer.getEntertainerType().toString().toLowerCase().equals(choice)) {
                 search.add(entertainer);
             }
         }

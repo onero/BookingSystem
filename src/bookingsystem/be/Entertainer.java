@@ -31,6 +31,10 @@ public class Entertainer extends Person {
         return IMAGE_PATH;
     }
 
+    public EntertainerType getEntertainerType() {
+        return entertainerType;
+    }
+
     public void setDescription(String description) {
         this.description = description + CompanyInfo.COMPANY_CONTACT;
     }

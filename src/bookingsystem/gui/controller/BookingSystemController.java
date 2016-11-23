@@ -12,6 +12,7 @@ import bookingsystem.gui.model.BookingModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -71,6 +73,8 @@ public class BookingSystemController implements Initializable {
     private TextField txtSearch;
     @FXML
     private Button btnClearSearch;
+    @FXML
+    private ComboBox<String> comboEntertainers;
 
     public BookingSystemController() {
         bookingModel = new BookingModel();
@@ -82,6 +86,15 @@ public class BookingSystemController implements Initializable {
         tableEntertainer.setCellValueFactory(new PropertyValueFactory<>("name"));
         tableType.setCellValueFactory(new PropertyValueFactory<>("entertainerType"));
         tableEntertainers.setItems(bookingModel.getEntertainers());
+
+        comboEntertainers.setItems(FXCollections.observableArrayList(
+                "ALL",
+                "Musician",
+                "Stand-up",
+                "Bartender",
+                "Event Girls",
+                "DJ"));
+        comboEntertainers.setVisibleRowCount(6);
     }
 
     @FXML
@@ -131,6 +144,23 @@ public class BookingSystemController implements Initializable {
             bookingModel.updateEntertainers(
                     bookingManager.getEntertainersFromSearch(
                             bookingModel.getEntertainers(), txtSearch.getText().toLowerCase()));
+        }
+    }
+
+    /**
+     * Limit search result to show only results from selection
+     */
+    @FXML
+    private void handleComboLimit() {
+        String choice = comboEntertainers.getSelectionModel().getSelectedItem().toLowerCase();
+        switch (choice) {
+            case "all":
+                bookingModel.resetList();
+                break;
+            default:
+                bookingModel.resetList();
+                bookingModel.updateEntertainers(bookingManager.getEntertainersFromComboLimit(bookingModel.getEntertainers(), choice));
+                break;
         }
     }
 
