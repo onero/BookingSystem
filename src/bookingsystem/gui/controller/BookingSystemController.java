@@ -37,7 +37,6 @@ import javafx.stage.Stage;
 
 public class BookingSystemController implements Initializable {
 
-    @FXML
     private ImageView imgEntertainer1;
     @FXML
     private ImageView imgEntertainer2;
