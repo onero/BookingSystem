@@ -14,6 +14,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -28,16 +29,12 @@ public class BookingSystem extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        try
-        {
-            this.stage = stage;
-            gotToStart();
-            stage.show();
-        }
-        catch(Exception ex)
-        {
-            System.out.println("Some mistake");
-        }        
+        Parent root = FXMLLoader.load(getClass().getResource("gui/view/BookingSystem.fxml"));
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
     }
 
     /**
