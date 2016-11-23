@@ -24,6 +24,7 @@ public class BookingModel {
      * Adds entertainers to the observable list
      */
     public void resetList() {
+        entertainers.clear();
         Entertainer kLarsen = new Entertainer(
                 "Kim Larsen", "kLarsen@contact.dk", 12345678, 1000000, EntertainerType.MUSICIAN);
         kLarsen.setDescription("Bacon Ipsum");
@@ -80,6 +81,8 @@ public class BookingModel {
 
     /**
      * Updates the observable list
+     *
+     * @param newEntertainers
      */
     public void updateEntertainers(ArrayList<Entertainer> newEntertainers) {
         entertainers.clear();

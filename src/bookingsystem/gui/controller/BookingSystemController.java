@@ -90,9 +90,9 @@ public class BookingSystemController implements Initializable {
         comboEntertainers.setItems(FXCollections.observableArrayList(
                 "ALL",
                 "Musician",
-                "Stand-up",
+                "Stand_up",
                 "Bartender",
-                "Event Girls",
+                "Event_Girl",
                 "DJ"));
         comboEntertainers.setVisibleRowCount(6);
     }
