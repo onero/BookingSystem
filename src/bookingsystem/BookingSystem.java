@@ -50,7 +50,6 @@ public class BookingSystem extends Application {
         {
             BookingSystemController bookingSystemController = 
                     (BookingSystemController) replaceSceneContent("gui/view/BookingSystem.fxml");
-            bookingSystemController.setApp(this);
         }
         catch(Exception ex)
         {

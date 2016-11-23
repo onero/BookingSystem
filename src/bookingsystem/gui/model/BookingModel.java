@@ -5,11 +5,54 @@
  */
 package bookingsystem.gui.model;
 
-/**
- *
- * @author Rasmus
- */
-public class BookingModel
-{
-    
+import bookingsystem.be.Entertainer;
+import bookingsystem.be.EntertainerType;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public class BookingModel {
+
+    private ObservableList<Entertainer> entertainers;
+
+    public BookingModel() {
+        entertainers = FXCollections.observableArrayList();
+        resetList();
+    }
+
+    /**
+     * Adds entertainers to the observable list
+     */
+    public void resetList() {
+        Entertainer kLarsen = new Entertainer(
+                "Kim Larsen", "kLarsen@contact.dk", 12345678, 1000000, EntertainerType.MUSICIAN);
+        kLarsen.setDescription("Bacon Ipsum");
+        kLarsen.setIMAGE_PATH("/bookingsystem/assets/img/KimLarsen.jpg");
+        entertainers.add(kLarsen);
+
+        Entertainer rSeebach = new Entertainer(
+                "Rasmus Seebach", "rSeebach@contact.dk", 12345678, 750000, EntertainerType.MUSICIAN);
+        rSeebach.setDescription("Awesome singer!");
+        rSeebach.setIMAGE_PATH("/bookingsystem/assets/img/RasmusSeebach.jpeg");
+        entertainers.add(rSeebach);
+
+        Entertainer mLanger = new Entertainer(
+                "Mads Langer", "mLanger@contact.dk", 12345678, 500000, EntertainerType.MUSICIAN);
+        mLanger.setDescription("Man he can sing!");
+        mLanger.setIMAGE_PATH("/bookingsystem/assets/img/MadsLanger.jpg");
+        entertainers.add(mLanger);
+    }
+
+    public ObservableList<Entertainer> getEntertainers() {
+        return entertainers;
+    }
+
+    /**
+     * Updates the observable list
+     */
+    public void updateEntertainers(ArrayList<Entertainer> newEntertainers) {
+        entertainers.clear();
+        entertainers.addAll(newEntertainers);
+    }
+
 }

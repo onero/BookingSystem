@@ -9,7 +9,28 @@ package bookingsystem.be;
  *
  * @author Rasmus
  */
-public class Person
-{
-    
+public abstract class Person {
+
+    private String name;
+    private String email;
+    private int telephone;
+
+    public Person(String name, String email, int telephone) {
+        this.name = name;
+        this.email = email;
+        this.telephone = telephone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getTelephone() {
+        return telephone;
+    }
+
 }
