@@ -16,9 +16,16 @@ public class BookingModel {
 
     public BookingModel() {
         entertainers = FXCollections.observableArrayList();
-        entertainers.add(new Entertainer("Kim Larsen", "kLarsen@contact.dk", 12345678, 1000000, EntertainerType.MUSICIAN));
-        entertainers.add(new Entertainer("Rasmus Seebach", "rSeebach@contact.dk", 12345678, 750000, EntertainerType.MUSICIAN));
-        entertainers.add(new Entertainer("Mads Langer", "mLanger@contact.dk", 12345678, 500000, EntertainerType.MUSICIAN));
+        Entertainer kLarsen = new Entertainer(
+                "Kim Larsen", "kLarsen@contact.dk", 12345678, 1000000, EntertainerType.MUSICIAN);
+        kLarsen.setDescription("Bacon Ipsum");
+        kLarsen.setIMAGE_PATH("/bookingsystem/assets/img/KimLarsen.jpg");
+        entertainers.add(kLarsen);
+
+        entertainers.add(new Entertainer(
+                "Rasmus Seebach", "rSeebach@contact.dk", 12345678, 750000, EntertainerType.MUSICIAN));
+        entertainers.add(new Entertainer(
+                "Mads Langer", "mLanger@contact.dk", 12345678, 500000, EntertainerType.MUSICIAN));
     }
 
     public ObservableList<Entertainer> getEntertainers() {

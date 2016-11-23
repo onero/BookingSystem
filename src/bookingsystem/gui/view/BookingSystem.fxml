@@ -17,13 +17,14 @@
       <Pane layoutX="6.0" layoutY="237.0" prefHeight="337.0" prefWidth="594.0">
          <children>
             <Label layoutX="297.0" layoutY="33.0" text="Description" />
-            <TextArea layoutX="291.0" layoutY="71.0" prefHeight="253.0" prefWidth="288.0" />
-            <TableView fx:id="tableEntertainers" layoutY="69.0" prefHeight="267.0" prefWidth="288.0">
+            <TextArea fx:id="txtDescription" layoutX="291.0" layoutY="71.0" prefHeight="253.0" prefWidth="288.0" />
+            <TableView fx:id="tableEntertainers" layoutY="142.0" onMousePressed="#handleLoadEntertainer" prefHeight="194.0" prefWidth="288.0">
               <columns>
                 <TableColumn fx:id="tableEntertainer" prefWidth="137.0" text="Entertainer" />
                 <TableColumn fx:id="tableType" prefWidth="150.0" text="Type" />
               </columns>
             </TableView>
+            <ImageView fx:id="imgSelectedEntertainer" fitHeight="128.0" fitWidth="167.0" layoutX="54.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
       <Pane layoutX="10.0" layoutY="14.0" prefHeight="194.0" prefWidth="584.0">

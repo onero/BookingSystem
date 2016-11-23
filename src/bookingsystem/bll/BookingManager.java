@@ -5,6 +5,12 @@
  */
 package bookingsystem.bll;
 
+import bookingsystem.be.Entertainer;
+
 public class BookingManager {
+
+    public String getEntertainerDescription(Entertainer entertainer) {
+        return entertainer.getDescription();
+    }
 
 }
