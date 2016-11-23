@@ -14,14 +14,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
  * @author Rasmus
  */
-public class EmployeeViewController implements Initializable
+public class EntertainerViewController implements Initializable
 {
+
+    @FXML
+    private Label lblName;
+    @FXML
+    private Label lblBookingPrice;
+    @FXML
+    private Label lblNumber;
+    @FXML
+    private Label lblCostumersPrice;
+    @FXML
+    private ComboBox<?> comboEntertainers;
 
     /**
      * Initializes the controller class.
@@ -33,13 +46,13 @@ public class EmployeeViewController implements Initializable
     }
     
     /**
-     * Switches to the entertainerView.
+     * Switches to the employeeView.
      * @param event
      * @throws IOException 
      */
     @FXML
-    public void switchToEntertainerView(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(BookingSystemController.class.getResource("/bookingsystem/gui/view/EntertainerView.fxml"));
+    public void switchToEmployeeView(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(BookingSystemController.class.getResource("/bookingsystem/gui/view/EmployeeView.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(loader.getRoot());
         BookingSystemController.primStage.setScene(scene);

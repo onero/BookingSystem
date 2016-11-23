@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="493.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="493.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookingsystem.gui.controller.EntertainerViewController">
    <children>
       <HBox layoutX="40.0" layoutY="92.0" prefHeight="108.0" prefWidth="308.0">
          <children>
@@ -45,7 +45,7 @@
       <ComboBox fx:id="comboEntertainers" layoutX="297.0" layoutY="47.0" prefHeight="25.0" prefWidth="207.0" promptText="Entertainers" />
       <Pane layoutX="435.0" layoutY="441.0" prefHeight="88.0" prefWidth="301.0">
          <children>
-            <Button layoutX="90.0" layoutY="29.0" mnemonicParsing="false" text="Employee page" />
+            <Button layoutX="90.0" layoutY="29.0" mnemonicParsing="false" onAction="#switchToEmployeeView" text="Employee page" />
          </children>
       </Pane>
    </children>
