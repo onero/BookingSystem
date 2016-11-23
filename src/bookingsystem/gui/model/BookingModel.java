@@ -72,6 +72,24 @@ public class BookingModel {
         kato.setDescription("Danmarks mest hotte dj!");
         kato.setIMAGE_PATH("/bookingsystem/assets/img/Kato.jpg");
         entertainers.add(kato);
+        
+        Entertainer talbot = new Entertainer(
+                "Simon Talbot", "STalbot@contact.dk", 400000, 300000, EntertainerType.STAND_UP);
+        talbot.setDescription("Den sjoveste standupper i Danmark, elsker af døtre, mødre og selvfølgelig nørder!");
+        talbot.setIMAGE_PATH("/bookingsystem/assets/img/sTalbot.png");
+        entertainers.add(talbot);
+        
+        Entertainer mick = new Entertainer(
+                "Mick Øgendahl", "mick@contack.dk", 400000, 300000, EntertainerType.STAND_UP);
+        mick.setDescription("Elsker du høje lyde og et sjovt ansigts mimik der ligner en ko der føder så er Mick Øgendahl noget for dig!");
+        mick.setIMAGE_PATH("/bookingsystem/assets/img/mick.jpg");
+        entertainers.add(mick);
+        
+        Entertainer nikita = new Entertainer(
+                "Nikita Klastrup", "flotpige@contact.dk", 30000, 20000, EntertainerType.EVENT_GIRL);
+        nikita.setDescription("Vil du have en lille hottie der er god til at snakke og hygge, så har du fundet den rette!!!!");
+        nikita.setIMAGE_PATH("/bookingsystem/assets/img/adam.jpg");
+        entertainers.add(nikita);
 
     }
 
