@@ -29,16 +29,6 @@
       </Pane>
       <Pane layoutX="10.0" layoutY="14.0" prefHeight="194.0" prefWidth="584.0">
          <children>
-<<<<<<< HEAD
-            <ImageView fx:id="imgEntertainer1" fitHeight="150.0" fitWidth="157.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="imgEntertainer2" fitHeight="150.0" fitWidth="157.0" layoutX="214.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="imgEntertainer3" fitHeight="150.0" fitWidth="176.0" layoutX="394.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
-<<<<<<< HEAD
-            <Button layoutX="243.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleTest" text="Test" />
-=======
-            <Button fx:id="btnLogin" layoutY="2.0" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
->>>>>>> refs/remotes/origin/development
-=======
             <ImageView fx:id="imgEntertainer1" fitHeight="139.0" fitWidth="157.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets/img/KimLarsen.jpg" />
@@ -55,7 +45,6 @@
             <Label fx:id="lblFirstArtistName" layoutX="61.0" layoutY="172.0" text="Kim larsen" />
             <Label fx:id="lblSecondArtistName" layoutX="223.0" layoutY="172.0" text="Rasmus Seebach" />
             <Label fx:id="lblThirdArtistName" layoutX="436.0" layoutY="172.0" text="Mads Langer" />
->>>>>>> refs/remotes/origin/development
          </children>
       </Pane>
       <TextField fx:id="txtSearch" layoutX="153.0" layoutY="212.0" onKeyPressed="#handleSearch" promptText="Kim Larsen" />
