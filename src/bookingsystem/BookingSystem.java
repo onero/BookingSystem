@@ -5,6 +5,7 @@
  */
 package bookingsystem;
 
+//import java.net.URL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,10 +17,12 @@ import javafx.stage.Stage;
  * @author gta1
  */
 public class BookingSystem extends Application {
+    
+    private Stage stage;
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("BookingSystem.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("gui/view/BookingSystem.fxml"));
 
         Scene scene = new Scene(root);
 
@@ -33,5 +36,4 @@ public class BookingSystem extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }
