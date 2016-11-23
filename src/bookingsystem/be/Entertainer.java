@@ -32,7 +32,7 @@ public class Entertainer extends Person {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description = description + CompanyInfo.COMPANY_CONTACT;
     }
 
     public void setIMAGE_PATH(String IMAGE_PATH) {

@@ -96,7 +96,7 @@ public class BookingSystemController implements Initializable {
     }
 
     /**
-     * Loads the desciption of the entertainer
+     * Loads the desciption and image of the entertainer
      */
     @FXML
     private void handleLoadEntertainer(MouseEvent event) {
